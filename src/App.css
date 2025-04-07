@@ -1,0 +1,203 @@
+.App {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background: #fff8dc;
+  min-height: 100vh;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* Allow vertical scroll */
+}
+
+body {
+  font-family: sans-serif;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: #fff8dc;
+  position: relative;
+  z-index: 1; /* Keep above background layers */
+}
+
+/* Optional: style your app content (e.g., wedding content) */
+.app-content {
+  text-align: center;
+  max-width: 1200px; /* Keep the content at a good readable width */
+  padding: 20px;
+  z-index: 2; /* Make sure the content is above the emoji layer */
+  overflow-y: auto;
+  position: relative;
+}
+
+
+h1 {
+  color: #f1bf0b;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #f3c714;
+  color: #4b3f00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffd43b;
+}
+
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 80%;
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Sparkles Animation */
+.panic-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none; /* prevent blocking clicks */
+  z-index: 1000; /* on top */
+}
+
+.panic-emoji {
+  position: absolute;
+  bottom: -60px;
+  opacity: 0.9;
+  animation-timing-function: linear;
+  pointer-events: none;
+}
+
+/* Left-to-right */
+.panic-emoji.left {
+  animation-name: flyPanicLeft;
+}
+
+/* Right-to-left */
+.panic-emoji.right {
+  animation-name: flyPanicRight;
+}
+
+.panic-emoji.spin {
+  animation-name: spinPanic, flyPanicLeft; /* default, will be overridden */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Define keyframes */
+@keyframes flyPanicLeft {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(50vw), -120vh);
+    opacity: 0;
+  }
+}
+
+@keyframes flyPanicRight {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50vw), -120vh);
+    opacity: 0;
+  }
+}
+
+@keyframes spinPanic {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1080deg);
+  }
+}
+
+.sunflower-decor {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.sunflower-top-left {
+  top: 20px;
+  left: 20px;
+  transform: rotate(-10deg);
+}
+
+.sunflower-bottom-right {
+  bottom: 20px;
+  right: 20px;
+  transform: rotate(15deg);
+}
+
+.sunflower-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+
+.button-small {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  background-color: #ffe066;
+  border: none;
+  cursor: pointer;
+}
+
+.button-small:hover {
+  background-color: #ffd43b;
+}
+
+.wheel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.wheel-wrapper canvas {
+  position: static !important;
+}
