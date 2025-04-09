@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import Confetti from "react-confetti";
 import { useWindowSize } from "@react-hook/window-size";
-import confetti from 'canvas-confetti';
+import confetti from "canvas-confetti";
 
 
 interface WheelOption {
@@ -10,14 +10,14 @@ interface WheelOption {
 }
 
 const WheelPicker: React.FC = () => {
-  const [showConfetti, setShowConfetti] = useState(false);
+const [showConfetti] = useState(false);
 const [width, height] = useWindowSize(); // 📏 needed for Confetti
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [options, setOptions] = useState<WheelOption[]>([
-    { option: "Vintage Theme" },
-    { option: "Boho Dress" },
-    { option: "Garden Venue" }
+    { option: "Msh 3arfa" },
+    { option: "Msh 3arfaa" },
+    { option: "Msh 3arfaaaaaaa" }
   ]);
   const [newOption, setNewOption] = useState("");
   const popConfetti = () => {
