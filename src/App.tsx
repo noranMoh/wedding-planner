@@ -5,8 +5,6 @@ import './App.css';
 import WheelPicker from './components/WheelPicker';
 import WeddingCountdown from './components/WeddingCountDown';
 
-const weddingDate = new Date('2025-05-03'); // Customize her wedding date
-
 const compliments: string[] = [
   "You're doing amazing!",
   "Don’t worry if it looks like chaos right now — moving always starts messy and ends with a new beginning.",

@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-
 export const PanicEmoji: React.FC = () => {
 
   const size = Math.random() * 40 + 20; // Random size between 20px and 60px
