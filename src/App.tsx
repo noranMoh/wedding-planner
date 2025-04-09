@@ -95,7 +95,21 @@ function App() {
       <div className="sunflower-decor sunflower-top-left sunflower-float">🌻</div>
   <div className="sunflower-decor sunflower-bottom-right sunflower-float">🌻</div>
 
-      {effect === "confetti" && <Confetti numberOfPieces={5000} recycle={false} />}
+  {effect === "confetti" && (
+  <div
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+      zIndex: 9999,
+      pointerEvents: "none",
+    }}
+  >
+    <Confetti numberOfPieces={4000} recycle={false} />
+  </div>
+)}
 
       {effect === "panic-emojis" && (
      <div className="panic-container">

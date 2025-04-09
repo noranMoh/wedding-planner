@@ -50,7 +50,7 @@ const [width, height] = useWindowSize(); // 📏 needed for Confetti
   return (
     <div style={{ padding: "2rem", maxWidth: 500, margin: "0 auto", textAlign: "center" }}>
        {showConfetti && <Confetti width={width} height={height} />}
-      <h2>Can't decide? Let the wheel help!</h2>
+      <h2 style={{ color: "#4b3f00" }}>Can't decide? Let the wheel help!</h2>
       <div >
   {options.length > 0 ? (
     <Wheel
@@ -102,7 +102,7 @@ const [width, height] = useWindowSize(); // 📏 needed for Confetti
         🎡 Spin
       </button>
 
-      <h3>Add your own choices</h3>
+      <h3 style={{ color: "#4b3f00"}} >Add your own choices</h3>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <input
           value={newOption}
@@ -132,8 +132,8 @@ const [width, height] = useWindowSize(); // 📏 needed for Confetti
           ➕ Add
         </button>
       </div>
-
-      <ul style={{ listStyle: "none", padding: 0, marginTop: "1rem" }}>
+      
+      <ul style={{ color: "#4b3f00", listStyle: "none", padding: 0, marginTop: "1rem" }}>
         {options.map((opt, idx) => (
           <li key={idx} style={{ margin: "0.3rem 0" }}>
             {opt.option}
